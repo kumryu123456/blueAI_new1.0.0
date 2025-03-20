@@ -1,0 +1,328 @@
+2025-03-19 10:28:25,792 - __main__ - INFO - 로깅 시작 (레벨: INFO)
+2025-03-19 10:28:25,792 - __main__ - INFO - 로그 파일: C:\Users\USER\BlueAI\logs\blueai_20250319_102825.log
+2025-03-19 10:28:25,813 - __main__ - INFO - 시스템 초기화 중...
+2025-03-19 10:28:25,813 - __main__ - INFO - 설정 관리자 초기화 중...
+2025-03-19 10:28:25,814 - core.settings_manager - INFO - 설정 로드됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:28:25,814 - __main__ - INFO - 플러그인 관리자 초기화 중... (디렉토리: plugins)
+2025-03-19 10:28:25,815 - __main__ - INFO - 플러그인 로드 중...
+2025-03-19 10:28:25,822 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.automation.opencv_plugin
+2025-03-19 10:28:25,936 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PlaywrightPlugin from plugins.automation.playwright_plugin
+2025-03-19 10:28:26,338 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PyAutoGUIPlugin from plugins.automation.pyautogui_plugin
+2025-03-19 10:28:26,340 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.ad_blocker_plugin
+2025-03-19 10:28:26,341 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.cookie_handler_plugin
+2025-03-19 10:28:26,342 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PopupHandlerPlugin from plugins.interruption.popup_handler_plugin
+2025-03-19 10:28:26,746 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: OCRPlugin from plugins.recognition.ocr_plugin
+2025-03-19 10:28:26,747 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.recognition.selector_plugin
+2025-03-19 10:28:26,749 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: TemplateMatchingPlugin from plugins.recognition.template_matching_plugin
+2025-03-19 10:28:26,749 - core.plugin_manager - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:28:26,750 - __main__ - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:28:26,750 - __main__ - INFO - 플러그인 초기화 중...
+2025-03-19 10:28:27,429 - plugins.automation.playwright_plugin - INFO - Playwright 초기화됨
+2025-03-19 10:28:27,429 - core.plugin_manager - INFO - 플러그인 초기화 완료: playwright
+2025-03-19 10:28:27,430 - plugins.automation.pyautogui_plugin - INFO - 화면 크기: 1920x1080
+2025-03-19 10:28:27,430 - core.plugin_manager - INFO - 플러그인 초기화 완료: pyautogui
+2025-03-19 10:28:27,433 - plugins.interruption.popup_handler_plugin - INFO - 팝업 처리기 초기화 완료: 0 패턴 로드됨
+2025-03-19 10:28:27,434 - core.plugin_manager - INFO - 플러그인 초기화 완료: popup_handler
+2025-03-19 10:28:27,464 - plugins.recognition.ocr_plugin - INFO - Tesseract OCR 버전: 5.5.0.20241111
+2025-03-19 10:28:27,464 - core.plugin_manager - INFO - 플러그인 초기화 완료: ocr
+2025-03-19 10:28:27,465 - plugins.recognition.template_matching_plugin - INFO - OpenCV 버전: 4.10.0
+2025-03-19 10:28:27,465 - core.plugin_manager - INFO - 플러그인 초기화 완료: template_matching
+2025-03-19 10:28:27,466 - __main__ - INFO - 플러그인 초기화 성공: playwright
+2025-03-19 10:28:27,466 - __main__ - INFO - 플러그인 초기화 성공: pyautogui
+2025-03-19 10:28:27,466 - __main__ - INFO - 플러그인 초기화 성공: popup_handler
+2025-03-19 10:28:27,467 - __main__ - INFO - 플러그인 초기화 성공: ocr
+2025-03-19 10:28:27,467 - __main__ - INFO - 플러그인 초기화 성공: template_matching
+2025-03-19 10:28:27,467 - __main__ - INFO - 워크플로우 관리자 초기화 중...
+2025-03-19 10:28:27,468 - __main__ - INFO - 인터럽션 핸들러 초기화 중...
+2025-03-19 10:28:27,468 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 10:28:27,469 - __main__ - INFO - GUI 모드 시작
+2025-03-19 10:28:27,923 - ui.main_window - INFO - 메인 윈도우 초기화 완료
+2025-03-19 10:28:32,107 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 10:28:32,113 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\20310712-119b-48c6-b368-89578c245c8d_20250319_102832.json
+2025-03-19 10:28:32,125 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:32,127 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:32,129 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:32,129 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:32,130 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 1/3)
+2025-03-19 10:28:34,134 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:34,136 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:34,137 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:34,137 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:34,138 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 2/3)
+2025-03-19 10:28:36,140 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:36,141 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:36,143 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:36,143 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:36,145 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 3/3)
+2025-03-19 10:28:38,147 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:38,148 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:38,151 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:38,152 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:38,155 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\20310712-119b-48c6-b368-89578c245c8d_20250319_102838.json
+2025-03-19 10:28:38,159 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:38,161 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:38,163 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:38,164 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:38,164 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 1/3)
+2025-03-19 10:28:40,168 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:40,169 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:40,171 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:40,172 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:40,173 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 2/3)
+2025-03-19 10:28:42,176 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:42,178 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 333, in launch_browser
+    return self._launch_browser(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 315, in _launch_browser
+    self.browser = self.playwright.chromium.launch(**launch_options)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 14447, in launch
+    self._sync(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+
+2025-03-19 10:28:42,181 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:42,181 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) current active started main>
+	Expected: <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) suspended active started main>
+2025-03-19 10:28:42,182 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 3/3)
+2025-03-19 10:28:42,486 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\20310712-119b-48c6-b368-89578c245c8d_20250319_102842.json
+2025-03-19 10:28:42,487 - core.workflow_manager - INFO - 워크플로우 관리자 종료됨
+2025-03-19 10:28:42,494 - asyncio - WARNING - socket.send() raised exception.
+2025-03-19 10:28:42,496 - asyncio - WARNING - socket.send() raised exception.
+2025-03-19 10:28:42,497 - asyncio - WARNING - socket.send() raised exception.
+2025-03-19 10:28:42,510 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,512 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,516 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,519 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,521 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,524 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,527 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task cancell...r_type.py:72>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x0000026358865D80 (otid=0x00000263570B3B70) current active started main>
+	Expected: <greenlet.greenlet object at 0x000002635A8C0980 (otid=0x000002635A8C50B0) suspended active started main>
+2025-03-19 10:28:42,530 - plugins.automation.playwright_plugin - INFO - Playwright 종료됨
+2025-03-19 10:28:42,530 - core.plugin_manager - INFO - 플러그인 종료됨: automation.playwright
+2025-03-19 10:28:42,530 - core.plugin_manager - INFO - 플러그인 종료됨: automation.pyautogui
+2025-03-19 10:28:42,531 - core.plugin_manager - INFO - 플러그인 종료됨: interruption.popup_handler
+2025-03-19 10:28:42,531 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.ocr
+2025-03-19 10:28:42,531 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.template_matching
+2025-03-19 10:28:42,532 - core.settings_manager - INFO - 설정 저장됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:28:42,532 - ui.main_window - INFO - 애플리케이션 종료됨
+2025-03-19 10:28:42,560 - __main__ - INFO - 모든 플러그인이 종료되었습니다.
+2025-03-19 10:28:42,598 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-03-19 10:28:42,600 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-03-19 10:28:42,600 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-03-19 10:28:42,601 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-03-19 10:28:42,602 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-03-19 10:28:42,603 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-03-19 10:28:42,604 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed

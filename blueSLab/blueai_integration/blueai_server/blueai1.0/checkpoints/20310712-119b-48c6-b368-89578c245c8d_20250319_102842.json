@@ -1,0 +1,371 @@
+{
+  "workflow_id": "20310712-119b-48c6-b368-89578c245c8d",
+  "name": "나라장터 검색 워크플로우",
+  "description": "인터럽션 처리와 다단계 작업 흐름을 포함한 나라장터 검색 예제",
+  "steps": {
+    "start_browser": {
+      "step_id": "start_browser",
+      "name": "브라우저 시작",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "launch_browser",
+        "params": {
+          "headless": false,
+          "browser_type": "chromium"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [],
+      "condition": null,
+      "rollback_action": null,
+      "status": "running",
+      "result": null,
+      "error": null,
+      "start_time": "2025-03-19T10:28:38.156247",
+      "end_time": null,
+      "retry_attempts": 3
+    },
+    "create_page": {
+      "step_id": "create_page",
+      "name": "새 페이지 생성",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "new_page",
+        "params": {}
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "start_browser"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "goto_nara": {
+      "step_id": "goto_nara",
+      "name": "나라장터 사이트 접속",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "goto",
+        "params": {
+          "url": "https://www.g2b.go.kr/index.jsp"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "create_page"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "handle_interruptions": {
+      "step_id": "handle_interruptions",
+      "name": "인터럽션 처리",
+      "action": {
+        "plugin_type": "interruption",
+        "plugin_name": "popup_handler",
+        "action": "handle_all_interruptions",
+        "params": {}
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "goto_nara"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "input_search_term": {
+      "step_id": "input_search_term",
+      "name": "검색어 입력",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "fill",
+        "params": {
+          "selector": "input[name=\"bidNm\"]",
+          "value": "${search_term}"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "handle_interruptions"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "click_search": {
+      "step_id": "click_search",
+      "name": "검색 버튼 클릭",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "click",
+        "params": {
+          "selector": "input[type=\"image\"][alt=\"검색\"]"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "input_search_term"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "wait_for_results": {
+      "step_id": "wait_for_results",
+      "name": "검색 결과 대기",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "wait_for_selector",
+        "params": {
+          "selector": "table.list_Table",
+          "timeout": 10000
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "click_search"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "take_screenshot": {
+      "step_id": "take_screenshot",
+      "name": "스크린샷 캡처",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "screenshot",
+        "params": {
+          "path": "C:\\Users\\USER\\BlueAI\\data\\nara_search_RPA.png"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "wait_for_results"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "extract_results": {
+      "step_id": "extract_results",
+      "name": "검색 결과 추출",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "evaluate",
+        "params": {
+          "expression": "() => {\n                    // 결과 테이블 찾기\n                    const table = document.querySelector('table.list_Table');\n                    if (!table) return { error: '검색 결과 테이블을 찾을 수 없습니다.' };\n                    \n                    // 행 선택\n                    const rows = table.querySelectorAll('tbody > tr');\n                    if (!rows || rows.length <= 1) return { error: '검색 결과가 없습니다.' };\n                    \n                    // 결과 데이터 추출\n                    const results = [];\n                    const maxItems = 5;\n                    \n                    let count = 0;\n                    for (const row of rows) {\n                        if (count >= maxItems) break;\n                        \n                        // 셀 데이터 추출\n                        const cells = row.querySelectorAll('td');\n                        if (!cells || cells.length < 5) continue;\n                        \n                        // 빈 행 건너뛰기\n                        if (!cells[0].textContent.trim()) continue;\n                        \n                        results.push({\n                            '공고번호': cells[0].textContent.trim(),\n                            '공고명': cells[1].textContent.trim(),\n                            '공고기관': cells[2].textContent.trim(),\n                            '입찰마감일시': cells[3].textContent.trim(),\n                            '상태': cells[4].textContent.trim()\n                        });\n                        \n                        count++;\n                    }\n                    \n                    return { \n                        results: results,\n                        count: results.length\n                    };\n                }"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "wait_for_results"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "save_results": {
+      "step_id": "save_results",
+      "name": "결과 저장",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "evaluate",
+        "params": {
+          "expression": "(resultsJson) => {\n                    // 결과 데이터를 JSON 형식으로 변환\n                    const results = JSON.parse(resultsJson);\n                    \n                    // 오류 확인\n                    if (results.error) {\n                        return { error: results.error };\n                    }\n                    \n                    // JSON 형식의 문자열 반환 (CSV로 변환하기 위해)\n                    return JSON.stringify(results.results);\n                }",
+          "arg": "${step_extract_results_result}"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "extract_results"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "save_to_csv": {
+      "step_id": "save_to_csv",
+      "name": "CSV 파일로 저장",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "evaluate",
+        "params": {
+          "expression": "(params) => {\n                    const { resultsJson, filePath } = JSON.parse(params);\n                    const results = JSON.parse(resultsJson);\n                    \n                    if (!results || results.length === 0) {\n                        return { error: '저장할 결과가 없습니다.' };\n                    }\n                    \n                    // CSV 헤더 생성\n                    const headers = Object.keys(results[0]);\n                    \n                    // CSV 데이터 생성\n                    let csv = headers.join(',') + '\\n';\n                    \n                    for (const result of results) {\n                        const row = headers.map(header => {\n                            // 쉼표와 따옴표 처리\n                            const cell = result[header] || '';\n                            return '\"' + cell.replace(/\"/g, '\"\"') + '\"';\n                        });\n                        csv += row.join(',') + '\\n';\n                    }\n                    \n                    // 파일 시스템은 브라우저에서 직접 접근할 수 없으므로,\n                    // 데이터만 반환하고 실제 저장은 다른 방식으로 처리해야 함\n                    return {\n                        csv: csv,\n                        filePath: filePath,\n                        count: results.length\n                    };\n                }",
+          "arg": "{\"resultsJson\": \"${step_save_results_result}\", \"filePath\": \"C:\\\\Users\\\\USER\\\\BlueAI\\\\data\\\\\\ub098\\ub77c\\uc7a5\\ud130_RPA_20250319_102832.csv\"}"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "save_results"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "handle_csv_save": {
+      "step_id": "handle_csv_save",
+      "name": "CSV 파일 실제 저장",
+      "action": {
+        "plugin_type": "custom",
+        "plugin_name": "file_handler",
+        "action": "write_file",
+        "params": {
+          "file_path": "${step_save_to_csv_result.filePath}",
+          "content": "${step_save_to_csv_result.csv}"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "save_to_csv"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "close_browser": {
+      "step_id": "close_browser",
+      "name": "브라우저 종료",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "close_browser",
+        "params": {}
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "handle_csv_save",
+        "take_screenshot"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    }
+  },
+  "step_order": [
+    "start_browser",
+    "create_page",
+    "goto_nara",
+    "handle_interruptions",
+    "input_search_term",
+    "click_search",
+    "wait_for_results",
+    "take_screenshot",
+    "extract_results",
+    "save_results",
+    "save_to_csv",
+    "handle_csv_save",
+    "close_browser"
+  ],
+  "status": "canceled",
+  "checkpoint_dir": "C:\\Users\\USER\\BlueAI\\checkpoints",
+  "auto_recovery": true,
+  "variables": {
+    "search_term": "RPA",
+    "max_items": 5,
+    "save_path": "C:\\Users\\USER\\BlueAI\\data"
+  },
+  "start_time": "2025-03-19T10:28:32.109983",
+  "end_time": "2025-03-19T10:28:42.484219",
+  "current_step_id": "start_browser",
+  "error": null
+}

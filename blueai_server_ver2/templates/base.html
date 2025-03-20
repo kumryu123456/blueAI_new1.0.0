@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BlueAI - 자동화 도우미{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- B 로고 버튼 (사이드바 트리거 재디자인) -->
+    <div id="sidebarTrigger" class="sidebar-trigger">
+        <div id="logoIcon" class="logo-icon">B</div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div id="sidebar" class="collapsed">
+        <!-- 여기에 로그인 상태에 따른 메뉴 변경 -->
+        <div class="sidebar-header">
+            <!-- 사이드바 핀 버튼 -->
+            <div class="sidebar-pin" id="sidebarPin">
+                <i class="fas fa-thumbtack"></i>
+                <span class="pin-tooltip">사이드바 고정</span>
+            </div>
+        </div>
+        
+        <!-- 로그인/회원가입 버튼 - 비로그인 시에만 표시 -->
+        {% if not user.is_authenticated %}
+        <div class="auth-buttons">
+            <a href="{% url 'accounts:login' %}" class="primary-button">로그인</a>
+            <a href="{% url 'accounts:register' %}" class="secondary-button">회원가입</a>
+        </div>
+        {% endif %}
+
+        <!-- 새 채팅 버튼 - 항상 표시 -->
+        <button id="newChat" class="primary-button">+ 새 채팅</button>
+        
+        <!-- 카테고리 탭 -->
+        <div class="category-tabs">
+            <button class="tab-button active" data-category="recent">최근 작업</button>
+            <button class="tab-button" data-category="favorites">즐겨찾기</button>
+        </div>
+        
+        <!-- 최근 채팅 목록 -->
+        <div id="recentTasksContainer" class="task-container">
+            <ul id="taskList" class="task-list">
+                <!-- 작업 목록은 JavaScript에서 동적으로 추가됨 -->
+            </ul>
+            <button id="viewAllTasks" class="view-all-button" style="display: none;">전체 보기</button>
+        </div>
+        
+        <!-- 즐겨찾기 목록 -->
+        <div id="favoritesContainer" class="task-container" style="display: none;">
+            <ul id="favoritesList" class="task-list">
+                <!-- 즐겨찾기 목록은 JavaScript에서 동적으로 추가됨 -->
+            </ul>
+        </div>
+        
+        <!-- 하단 메뉴 - 업데이트된 드롭다운 (위치 및 방향 수정) -->
+        <div class="sidebar-footer">
+            <div class="footer-button-container">
+                <button id="settingsBtn" class="footer-button">자세히 알아보기</button>
+                <div class="footer-dropdown settings-dropdown">
+                    <a href="#" class="dropdown-link dropdown-special">
+                        blueSLAP에 대하여
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <div class="dropdown-extra-separator"></div>
+                    <a href="#" class="dropdown-link">
+                        소비자 이용약관
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        이용 정책
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        개인정보 처리방침
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        개인정보 선택사항
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-button-container">
+                <button id="helpBtn" class="footer-button">도움말</button>
+                <div class="footer-dropdown help-dropdown">
+                    <a href="#" class="dropdown-link">
+                        BlueAI 사용법
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        자주 묻는 질문
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        문제 신고하기
+                    </a>
+                </div>
+            </div>
+            <div class="footer-button-container">
+                <button id="langBtn" class="footer-button">언어</button>
+                <div class="footer-dropdown lang-dropdown">
+                    <a href="#" class="dropdown-link active">
+                        한국어
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        English
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        日本語
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        中文
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        Français
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        Português
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div id="main" class="sidebar-collapsed">
+        <!-- 상단 헤더 -->
+        <div id="header">
+            <div class="left-section">
+            </div>
+            <h1 id="taskTitle" class="header-title" style="display: none;">테스트 작업</h1>
+            <!-- 서브페이지 제목 드롭다운 메뉴 -->
+            <div class="title-dropdown">
+                <a href="#" class="dropdown-item rename">
+                    <i class="fas fa-edit"></i>
+                    이름 변경
+                </a>
+                <a href="#" class="dropdown-item delete">
+                    <i class="fas fa-trash-alt"></i>
+                    삭제
+                </a>
+            </div>
+            <div class="right-section">
+                <button id="shareBtn" class="utility-button tooltip-container" style="display: none;">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="tooltip">공유</span>
+                </button>
+                <button id="favoriteBtn" class="utility-button tooltip-container" style="display: none;">
+                    <i class="far fa-star"></i>
+                    <span class="tooltip">즐겨찾기</span>
+                </button>
+                <button id="logDiaryBtn" class="utility-button tooltip-container" style="display: none;">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="tooltip">Log Diary</span>
+                </button>
+                {% if user.is_authenticated %}
+                <div class="user-container">
+                    <button id="userBtn" class="user-button">{{ user.get_initial|default:'?' }}</button>
+                    <!-- 사용자 드롭다운 메뉴 (프로젝트 선택 기능 복원) -->
+                    <div class="user-dropdown">
+                        <div class="dropdown-header">
+                            {{ user.get_display_name }}님의 BlueAI
+                            <div class="user-role">
+                                host
+                                <span class="user-role-tag">{{ user.get_plan_display_name }}</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn"><i class="fas fa-cog"></i></button>
+                                <button class="quick-action-btn"><i class="fas fa-user-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="dropdown-separator"></div>
+                        
+                        <!-- 프로젝트 선택 섹션 (복원된 기능) -->
+                        <div class="dropdown-section projects-section">
+                            <div class="dropdown-subheader">프로젝트</div>
+                            <ul class="project-list">
+                                {% for project in current_user_projects %}
+                                <li class="project-item {% if current_project.id == project.id %}active-project{% endif %}" data-project-id="{{ project.id }}">
+                                    <div class="project-icon">{{ project.name|first }}</div>
+                                    <div class="project-info">
+                                        <div class="project-name">{{ project.name }}</div>
+                                        <div class="project-owner">{{ project.owner.get_display_name }}</div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                                
+                                {% for project in shared_projects %}
+                                <li class="project-item {% if current_project.id == project.id %}active-project{% endif %}" data-project-id="{{ project.id }}">
+                                    <div class="project-icon">{{ project.name|first }}</div>
+                                    <div class="project-info">
+                                        <div class="project-name">{{ project.name }}</div>
+                                        <div class="project-owner">{{ project.owner.get_display_name }} (공유)</div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                        <div class="dropdown-separator"></div>
+                        <div class="dropdown-section">
+                            <a href="{% url 'accounts:profile' %}" class="dropdown-item"><i class="fas fa-user"></i> 프로필</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-crown"></i> 플랜 업그레이드</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-sliders-h"></i> BlueAI 맞춤 설정</a>
+                            <a href="#" class="dropdown-item windows-app"><i class="fas fa-download"></i> Windows 앱 다운로드</a>
+                        </div>
+                        <div class="dropdown-separator"></div>
+                        <div class="dropdown-section">
+                            <form id="logout-form" method="post" action="{% url 'accounts:logout' %}" class="logout-form">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-button">
+                                    <i class="fas fa-sign-out-alt"></i> 로그아웃
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="login-buttons">
+                    <a href="{% url 'accounts:login' %}" class="primary-button">로그인</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+        
+        <!-- 전체 작업 기록 모달 -->
+        <div id="allTasksModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>전체 작업 기록</h2>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="작업 검색...">
+                    </div>
+                    <div class="all-tasks-list">
+                        <!-- 모든 작업 기록이 여기에 표시됨 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 대화 기록 사이드 패널 -->
+        <div id="logDiaryPanel" class="log-diary-panel">
+            <div class="log-diary-header">
+                <h3>Log Diary</h3>
+                <button class="close-panel">&times;</button>
+            </div>
+            <div class="log-diary-content">
+                <!-- 대화 기록 내용이 여기에 표시됨 -->
+            </div>
+        </div>
+    </div>
+
+    {% csrf_token %}
+    <script>
+        // 로그인 상태 변수를 JavaScript로 전달
+        window.isAuthenticated = {% if user.is_authenticated %}true{% else %}false{% endif %};
+        
+        {% if user.is_authenticated %}
+        window.userDisplayName = "{{ user.get_display_name }}";
+        window.userInitial = "{{ user.get_initial|default:'' }}";
+        window.userPlan = "{{ user.get_plan_display_name }}";
+        {% endif %}
+    
+        // CSRF 토큰 가져오기
+        var csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+        var apiUrls = {
+            processInput: "{% url 'core:process_input' %}",
+            getTasks: "{% url 'core:get_tasks' %}",
+            updateConversation: "{% url 'core:update_conversation' %}",
+            executeTask: "{% url 'core:execute_task' %}",
+            updateTaskTitle: "{% url 'core:update_task_title' %}",
+            toggleFavorite: function(taskId) {
+                return "{% url 'core:toggle_favorite' task_id=0 %}".replace('0', taskId);
+            },
+            getFavorites: "{% url 'core:get_favorites' %}",
+            deleteTask: function(taskId) {
+                return "{% url 'core:delete_task' task_id=0 %}".replace('0', taskId);
+            },
+            getTask: function(taskId) {
+                return "{% url 'core:get_task' task_id=0 %}".replace('0', taskId);
+            },
+            switchProject: "{% url 'accounts:switch_project' %}"
+        };
+    </script>
+    
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

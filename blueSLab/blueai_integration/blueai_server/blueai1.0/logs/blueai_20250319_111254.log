@@ -1,0 +1,227 @@
+2025-03-19 11:12:54,007 - __main__ - INFO - 로깅 시작 (레벨: INFO)
+2025-03-19 11:12:54,007 - __main__ - INFO - 로그 파일: C:\Users\USER\BlueAI\logs\blueai_20250319_111254.log
+2025-03-19 11:12:54,029 - __main__ - INFO - 시스템 초기화 중...
+2025-03-19 11:12:54,030 - __main__ - INFO - 설정 관리자 초기화 중...
+2025-03-19 11:12:54,030 - core.settings_manager - INFO - 설정 로드됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 11:12:54,031 - __main__ - INFO - 플러그인 관리자 초기화 중... (디렉토리: plugins)
+2025-03-19 11:12:54,031 - __main__ - INFO - 플러그인 로드 중...
+2025-03-19 11:12:54,037 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.automation.opencv_plugin
+2025-03-19 11:12:54,154 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PlaywrightPlugin from plugins.automation.playwright_plugin
+2025-03-19 11:12:54,562 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PyAutoGUIPlugin from plugins.automation.pyautogui_plugin
+2025-03-19 11:12:54,564 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.ad_blocker_plugin
+2025-03-19 11:12:54,564 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.cookie_handler_plugin
+2025-03-19 11:12:54,565 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PopupHandlerPlugin from plugins.interruption.popup_handler_plugin
+2025-03-19 11:12:54,996 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: OCRPlugin from plugins.recognition.ocr_plugin
+2025-03-19 11:12:54,997 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.recognition.selector_plugin
+2025-03-19 11:12:54,998 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: TemplateMatchingPlugin from plugins.recognition.template_matching_plugin
+2025-03-19 11:12:55,000 - core.plugin_manager - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 11:12:55,000 - __main__ - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 11:12:55,000 - __main__ - INFO - 플러그인 초기화 중...
+2025-03-19 11:12:55,002 - plugins.automation.playwright_plugin - INFO - Playwright 초기화됨
+2025-03-19 11:12:55,002 - core.plugin_manager - INFO - 플러그인 초기화 완료: playwright
+2025-03-19 11:12:55,004 - plugins.automation.pyautogui_plugin - INFO - 화면 크기: 1920x1080
+2025-03-19 11:12:55,005 - core.plugin_manager - INFO - 플러그인 초기화 완료: pyautogui
+2025-03-19 11:12:55,007 - plugins.interruption.popup_handler_plugin - INFO - 팝업 처리기 초기화 완료: 0 패턴 로드됨
+2025-03-19 11:12:55,007 - core.plugin_manager - INFO - 플러그인 초기화 완료: popup_handler
+2025-03-19 11:12:55,040 - plugins.recognition.ocr_plugin - INFO - Tesseract OCR 버전: 5.5.0.20241111
+2025-03-19 11:12:55,040 - core.plugin_manager - INFO - 플러그인 초기화 완료: ocr
+2025-03-19 11:12:55,041 - plugins.recognition.template_matching_plugin - INFO - OpenCV 버전: 4.10.0
+2025-03-19 11:12:55,041 - core.plugin_manager - INFO - 플러그인 초기화 완료: template_matching
+2025-03-19 11:12:55,041 - __main__ - INFO - 플러그인 초기화 성공: playwright
+2025-03-19 11:12:55,041 - __main__ - INFO - 플러그인 초기화 성공: pyautogui
+2025-03-19 11:12:55,041 - __main__ - INFO - 플러그인 초기화 성공: popup_handler
+2025-03-19 11:12:55,042 - __main__ - INFO - 플러그인 초기화 성공: ocr
+2025-03-19 11:12:55,042 - __main__ - INFO - 플러그인 초기화 성공: template_matching
+2025-03-19 11:12:55,042 - __main__ - INFO - 워크플로우 관리자 초기화 중...
+2025-03-19 11:12:55,043 - __main__ - INFO - 인터럽션 핸들러 초기화 중...
+2025-03-19 11:12:55,043 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 11:12:55,043 - __main__ - INFO - GUI 모드 시작
+2025-03-19 11:12:55,499 - ui.main_window - INFO - 메인 윈도우 초기화 완료
+2025-03-19 11:13:02,056 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\ca2019b2-650f-4337-81c3-6032e49633ac_20250319_111302.json
+2025-03-19 11:13:02,080 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:02,081 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:02,081 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:02,082 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 1/3)
+2025-03-19 11:13:04,084 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:04,085 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:04,085 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:04,086 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 2/3)
+2025-03-19 11:13:06,089 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:06,091 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:06,091 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:06,092 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 3/3)
+2025-03-19 11:13:08,094 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:08,095 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:08,096 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:08,098 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\ca2019b2-650f-4337-81c3-6032e49633ac_20250319_111308.json
+2025-03-19 11:13:08,101 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:08,102 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:08,103 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:08,103 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 1/3)
+2025-03-19 11:13:10,107 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:10,110 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:10,111 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:10,111 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 2/3)
+2025-03-19 11:13:12,113 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:12,114 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:12,115 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:12,116 - core.workflow_manager - INFO - 단계 재시도 중: 브라우저 시작 (시도 3/3)
+2025-03-19 11:13:13,275 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\ca2019b2-650f-4337-81c3-6032e49633ac_20250319_111313.json
+2025-03-19 11:13:14,118 - plugins.automation.playwright_plugin - ERROR - 브라우저 시작 중 오류: 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:14,120 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:14,120 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.launch_browser - 'PlaywrightPlugin' object has no attribute '_launch_browser'
+Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 54, in execute_action
+    method = getattr(self.playwright_plugin, "_" + action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightPlugin' object has no attribute '_launch_browser'. Did you mean: 'launch_browser'?
+
+2025-03-19 11:13:14,122 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\ca2019b2-650f-4337-81c3-6032e49633ac_20250319_111314.json
+2025-03-19 11:13:14,126 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\ca2019b2-650f-4337-81c3-6032e49633ac_20250319_111314.json
+2025-03-19 11:23:56,264 - core.workflow_manager - INFO - 워크플로우 관리자 종료됨
+2025-03-19 11:23:56,265 - plugins.automation.playwright_plugin - INFO - Playwright 종료됨
+2025-03-19 11:23:56,265 - core.plugin_manager - INFO - 플러그인 종료됨: automation.playwright
+2025-03-19 11:23:56,265 - core.plugin_manager - INFO - 플러그인 종료됨: automation.pyautogui
+2025-03-19 11:23:56,266 - core.plugin_manager - INFO - 플러그인 종료됨: interruption.popup_handler
+2025-03-19 11:23:56,266 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.ocr
+2025-03-19 11:23:56,267 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.template_matching
+2025-03-19 11:23:56,268 - core.settings_manager - INFO - 설정 저장됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 11:23:56,268 - ui.main_window - INFO - 애플리케이션 종료됨

@@ -1,0 +1,93 @@
+2025-03-19 10:26:42,910 - __main__ - INFO - 로깅 시작 (레벨: INFO)
+2025-03-19 10:26:42,910 - __main__ - INFO - 로그 파일: C:\Users\USER\BlueAI\logs\blueai_20250319_102642.log
+2025-03-19 10:26:42,945 - __main__ - INFO - 시스템 초기화 중...
+2025-03-19 10:26:42,946 - __main__ - INFO - 설정 관리자 초기화 중...
+2025-03-19 10:26:42,947 - core.settings_manager - INFO - 설정 로드됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:26:42,947 - __main__ - INFO - 플러그인 관리자 초기화 중... (디렉토리: plugins)
+2025-03-19 10:26:42,948 - __main__ - INFO - 플러그인 로드 중...
+2025-03-19 10:26:42,963 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.automation.opencv_plugin
+2025-03-19 10:26:43,179 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PlaywrightPlugin from plugins.automation.playwright_plugin
+2025-03-19 10:26:44,044 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PyAutoGUIPlugin from plugins.automation.pyautogui_plugin
+2025-03-19 10:26:44,050 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.ad_blocker_plugin
+2025-03-19 10:26:44,052 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.cookie_handler_plugin
+2025-03-19 10:26:44,062 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PopupHandlerPlugin from plugins.interruption.popup_handler_plugin
+2025-03-19 10:26:44,551 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: OCRPlugin from plugins.recognition.ocr_plugin
+2025-03-19 10:26:44,553 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.recognition.selector_plugin
+2025-03-19 10:26:44,561 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: TemplateMatchingPlugin from plugins.recognition.template_matching_plugin
+2025-03-19 10:26:44,562 - core.plugin_manager - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:26:44,562 - __main__ - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:26:44,562 - __main__ - INFO - 플러그인 초기화 중...
+2025-03-19 10:26:45,633 - plugins.automation.playwright_plugin - INFO - Playwright 초기화됨
+2025-03-19 10:26:45,634 - core.plugin_manager - INFO - 플러그인 초기화 완료: playwright
+2025-03-19 10:26:45,635 - plugins.automation.pyautogui_plugin - INFO - 화면 크기: 1920x1080
+2025-03-19 10:26:45,635 - core.plugin_manager - INFO - 플러그인 초기화 완료: pyautogui
+2025-03-19 10:26:45,636 - plugins.interruption.popup_handler_plugin - INFO - 팝업 처리기 초기화 완료: 0 패턴 로드됨
+2025-03-19 10:26:45,636 - core.plugin_manager - INFO - 플러그인 초기화 완료: popup_handler
+2025-03-19 10:26:45,671 - plugins.recognition.ocr_plugin - INFO - Tesseract OCR 버전: 5.5.0.20241111
+2025-03-19 10:26:45,672 - core.plugin_manager - INFO - 플러그인 초기화 완료: ocr
+2025-03-19 10:26:45,672 - plugins.recognition.template_matching_plugin - INFO - OpenCV 버전: 4.10.0
+2025-03-19 10:26:45,673 - core.plugin_manager - INFO - 플러그인 초기화 완료: template_matching
+2025-03-19 10:26:45,673 - __main__ - INFO - 플러그인 초기화 성공: playwright
+2025-03-19 10:26:45,674 - __main__ - INFO - 플러그인 초기화 성공: pyautogui
+2025-03-19 10:26:45,674 - __main__ - INFO - 플러그인 초기화 성공: popup_handler
+2025-03-19 10:26:45,675 - __main__ - INFO - 플러그인 초기화 성공: ocr
+2025-03-19 10:26:45,675 - __main__ - INFO - 플러그인 초기화 성공: template_matching
+2025-03-19 10:26:45,675 - __main__ - INFO - 워크플로우 관리자 초기화 중...
+2025-03-19 10:26:45,676 - __main__ - INFO - 인터럽션 핸들러 초기화 중...
+2025-03-19 10:26:45,677 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 10:26:45,678 - __main__ - INFO - GUI 모드 시작
+2025-03-19 10:26:46,282 - ui.main_window - INFO - 메인 윈도우 초기화 완료
+2025-03-19 10:26:53,640 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 10:26:53,640 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\9e2a09b9-b345-4151-9f3d-4548d0536ac3_20250319_102653.json
+2025-03-19 10:26:54,077 - plugins.automation.playwright_plugin - INFO - 브라우저 시작됨: chromium (headless: False)
+2025-03-19 10:26:54,080 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\9e2a09b9-b345-4151-9f3d-4548d0536ac3_20250319_102654.json
+2025-03-19 10:26:55,147 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\9e2a09b9-b345-4151-9f3d-4548d0536ac3_20250319_102655.json
+2025-03-19 10:26:55,148 - plugins.automation.playwright_plugin - INFO - goto 호출됨, 현재 페이지 ID: page_1742347615
+2025-03-19 10:26:55,148 - plugins.automation.playwright_plugin - INFO - 사용 가능한 페이지 ID 목록: []
+2025-03-19 10:26:55,148 - plugins.automation.playwright_plugin - INFO - 사용할 페이지 ID: page_1742347615
+2025-03-19 10:26:55,148 - plugins.automation.playwright_plugin - INFO - 페이지 ID page_1742347615를 찾을 수 없어 새 페이지를 생성합니다
+2025-03-19 10:26:56,229 - plugins.automation.playwright_plugin - INFO - 새 페이지 ID: page_1742347616
+2025-03-19 10:26:56,229 - plugins.automation.playwright_plugin - ERROR - 페이지 ID 'page_1742347616'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:26:56,230 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: goto - 페이지 ID 'page_1742347616'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:26:56,230 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.goto - 페이지 ID 'page_1742347616'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:26:56,230 - core.workflow_manager - INFO - 단계 재시도 중: 나라장터 사이트 접속 (시도 1/3)
+2025-03-19 10:26:58,232 - plugins.automation.playwright_plugin - INFO - goto 호출됨, 현재 페이지 ID: page_1742347616
+2025-03-19 10:26:58,232 - plugins.automation.playwright_plugin - INFO - 사용 가능한 페이지 ID 목록: []
+2025-03-19 10:26:58,232 - plugins.automation.playwright_plugin - INFO - 사용할 페이지 ID: page_1742347616
+2025-03-19 10:26:58,233 - plugins.automation.playwright_plugin - INFO - 페이지 ID page_1742347616를 찾을 수 없어 새 페이지를 생성합니다
+2025-03-19 10:26:59,229 - plugins.automation.playwright_plugin - INFO - 새 페이지 ID: page_1742347619
+2025-03-19 10:26:59,229 - plugins.automation.playwright_plugin - ERROR - 페이지 ID 'page_1742347619'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:26:59,230 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: goto - 페이지 ID 'page_1742347619'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:26:59,230 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.goto - 페이지 ID 'page_1742347619'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:26:59,231 - core.workflow_manager - INFO - 단계 재시도 중: 나라장터 사이트 접속 (시도 2/3)
+2025-03-19 10:27:01,232 - plugins.automation.playwright_plugin - INFO - goto 호출됨, 현재 페이지 ID: page_1742347619
+2025-03-19 10:27:01,233 - plugins.automation.playwright_plugin - INFO - 사용 가능한 페이지 ID 목록: []
+2025-03-19 10:27:01,233 - plugins.automation.playwright_plugin - INFO - 사용할 페이지 ID: page_1742347619
+2025-03-19 10:27:01,233 - plugins.automation.playwright_plugin - INFO - 페이지 ID page_1742347619를 찾을 수 없어 새 페이지를 생성합니다
+2025-03-19 10:27:02,191 - plugins.automation.playwright_plugin - INFO - 새 페이지 ID: page_1742347622
+2025-03-19 10:27:02,193 - plugins.automation.playwright_plugin - ERROR - 페이지 ID 'page_1742347622'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:27:02,194 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: goto - 페이지 ID 'page_1742347622'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:27:02,194 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.goto - 페이지 ID 'page_1742347622'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:27:02,195 - core.workflow_manager - INFO - 단계 재시도 중: 나라장터 사이트 접속 (시도 3/3)
+2025-03-19 10:27:02,403 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\9e2a09b9-b345-4151-9f3d-4548d0536ac3_20250319_102702.json
+2025-03-19 10:27:04,196 - plugins.automation.playwright_plugin - INFO - goto 호출됨, 현재 페이지 ID: page_1742347622
+2025-03-19 10:27:04,196 - plugins.automation.playwright_plugin - INFO - 사용 가능한 페이지 ID 목록: []
+2025-03-19 10:27:04,196 - plugins.automation.playwright_plugin - INFO - 사용할 페이지 ID: page_1742347622
+2025-03-19 10:27:04,196 - plugins.automation.playwright_plugin - INFO - 페이지 ID page_1742347622를 찾을 수 없어 새 페이지를 생성합니다
+2025-03-19 10:27:05,184 - plugins.automation.playwright_plugin - INFO - 새 페이지 ID: page_1742347625
+2025-03-19 10:27:05,184 - plugins.automation.playwright_plugin - ERROR - 페이지 ID 'page_1742347625'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:27:05,184 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: goto - 페이지 ID 'page_1742347625'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:27:05,184 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.goto - 페이지 ID 'page_1742347625'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:27:05,190 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\9e2a09b9-b345-4151-9f3d-4548d0536ac3_20250319_102705.json
+2025-03-19 10:27:05,198 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\9e2a09b9-b345-4151-9f3d-4548d0536ac3_20250319_102705.json
+2025-03-19 10:27:07,293 - core.workflow_manager - WARNING - 실행 중이 아닌 작업 흐름은 일시 중지할 수 없음: 9e2a09b9-b345-4151-9f3d-4548d0536ac3
+2025-03-19 10:27:46,783 - core.workflow_manager - INFO - 워크플로우 관리자 종료됨
+2025-03-19 10:27:46,962 - plugins.automation.playwright_plugin - INFO - Playwright 종료됨
+2025-03-19 10:27:46,962 - core.plugin_manager - INFO - 플러그인 종료됨: automation.playwright
+2025-03-19 10:27:46,963 - core.plugin_manager - INFO - 플러그인 종료됨: automation.pyautogui
+2025-03-19 10:27:46,963 - core.plugin_manager - INFO - 플러그인 종료됨: interruption.popup_handler
+2025-03-19 10:27:46,964 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.ocr
+2025-03-19 10:27:46,964 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.template_matching
+2025-03-19 10:27:46,965 - core.settings_manager - INFO - 설정 저장됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:27:46,965 - ui.main_window - INFO - 애플리케이션 종료됨
+2025-03-19 10:27:46,982 - __main__ - INFO - 모든 플러그인이 종료되었습니다.

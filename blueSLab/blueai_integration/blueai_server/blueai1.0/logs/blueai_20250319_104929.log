@@ -1,0 +1,67 @@
+2025-03-19 10:49:29,210 - __main__ - INFO - 로깅 시작 (레벨: INFO)
+2025-03-19 10:49:29,210 - __main__ - INFO - 로그 파일: C:\Users\USER\BlueAI\logs\blueai_20250319_104929.log
+2025-03-19 10:49:29,233 - __main__ - INFO - 시스템 초기화 중...
+2025-03-19 10:49:29,234 - __main__ - INFO - 설정 관리자 초기화 중...
+2025-03-19 10:49:29,235 - core.settings_manager - INFO - 설정 로드됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:49:29,236 - __main__ - INFO - 플러그인 관리자 초기화 중... (디렉토리: plugins)
+2025-03-19 10:49:29,236 - __main__ - INFO - 플러그인 로드 중...
+2025-03-19 10:49:29,240 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.automation.opencv_plugin
+2025-03-19 10:49:29,342 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PlaywrightPlugin from plugins.automation.playwright_plugin
+2025-03-19 10:49:29,641 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PyAutoGUIPlugin from plugins.automation.pyautogui_plugin
+2025-03-19 10:49:29,643 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.ad_blocker_plugin
+2025-03-19 10:49:29,644 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.cookie_handler_plugin
+2025-03-19 10:49:29,645 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PopupHandlerPlugin from plugins.interruption.popup_handler_plugin
+2025-03-19 10:49:30,016 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: OCRPlugin from plugins.recognition.ocr_plugin
+2025-03-19 10:49:30,018 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.recognition.selector_plugin
+2025-03-19 10:49:30,019 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: TemplateMatchingPlugin from plugins.recognition.template_matching_plugin
+2025-03-19 10:49:30,019 - core.plugin_manager - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:49:30,020 - __main__ - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:49:30,020 - __main__ - INFO - 플러그인 초기화 중...
+2025-03-19 10:49:30,674 - plugins.automation.playwright_plugin - INFO - Playwright 초기화됨
+2025-03-19 10:49:30,674 - core.plugin_manager - INFO - 플러그인 초기화 완료: playwright
+2025-03-19 10:49:30,676 - plugins.automation.pyautogui_plugin - INFO - 화면 크기: 1920x1080
+2025-03-19 10:49:30,676 - core.plugin_manager - INFO - 플러그인 초기화 완료: pyautogui
+2025-03-19 10:49:30,677 - plugins.interruption.popup_handler_plugin - INFO - 팝업 처리기 초기화 완료: 0 패턴 로드됨
+2025-03-19 10:49:30,678 - core.plugin_manager - INFO - 플러그인 초기화 완료: popup_handler
+2025-03-19 10:49:30,702 - plugins.recognition.ocr_plugin - INFO - Tesseract OCR 버전: 5.5.0.20241111
+2025-03-19 10:49:30,702 - core.plugin_manager - INFO - 플러그인 초기화 완료: ocr
+2025-03-19 10:49:30,703 - plugins.recognition.template_matching_plugin - INFO - OpenCV 버전: 4.10.0
+2025-03-19 10:49:30,704 - core.plugin_manager - INFO - 플러그인 초기화 완료: template_matching
+2025-03-19 10:49:30,704 - __main__ - INFO - 플러그인 초기화 성공: playwright
+2025-03-19 10:49:30,704 - __main__ - INFO - 플러그인 초기화 성공: pyautogui
+2025-03-19 10:49:30,704 - __main__ - INFO - 플러그인 초기화 성공: popup_handler
+2025-03-19 10:49:30,705 - __main__ - INFO - 플러그인 초기화 성공: ocr
+2025-03-19 10:49:30,705 - __main__ - INFO - 플러그인 초기화 성공: template_matching
+2025-03-19 10:49:30,705 - __main__ - INFO - 워크플로우 관리자 초기화 중...
+2025-03-19 10:49:30,706 - __main__ - INFO - 인터럽션 핸들러 초기화 중...
+2025-03-19 10:49:30,706 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 10:49:30,706 - __main__ - INFO - GUI 모드 시작
+2025-03-19 10:49:31,314 - ui.main_window - INFO - 메인 윈도우 초기화 완료
+2025-03-19 10:49:36,383 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\15598d63-3ce3-40c4-afee-f90d5878cfc7_20250319_104936.json
+2025-03-19 10:49:36,598 - plugins.automation.playwright_plugin - INFO - 브라우저 시작됨: chromium (headless: False)
+2025-03-19 10:49:36,600 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\15598d63-3ce3-40c4-afee-f90d5878cfc7_20250319_104936.json
+2025-03-19 10:49:37,590 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\15598d63-3ce3-40c4-afee-f90d5878cfc7_20250319_104937.json
+2025-03-19 10:49:37,592 - plugins.automation.playwright_plugin - INFO - goto 호출됨, 현재 페이지 ID: page_1742348977
+2025-03-19 10:49:37,592 - plugins.automation.playwright_plugin - INFO - 사용 가능한 페이지 ID 목록: []
+2025-03-19 10:49:37,592 - plugins.automation.playwright_plugin - INFO - 사용할 페이지 ID: page_1742348977
+2025-03-19 10:49:37,593 - plugins.automation.playwright_plugin - INFO - 페이지 ID page_1742348977를 찾을 수 없어 새 페이지를 생성합니다
+2025-03-19 10:49:38,603 - plugins.automation.playwright_plugin - INFO - 새 페이지 ID: page_1742348978
+2025-03-19 10:49:38,603 - plugins.automation.playwright_plugin - ERROR - 페이지 ID 'page_1742348978'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:49:38,603 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: goto - 페이지 ID 'page_1742348978'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:49:38,604 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.goto - 페이지 ID 'page_1742348978'를 찾을 수 없습니다. 사용 가능한 페이지: []
+2025-03-19 10:49:38,604 - core.workflow_manager - INFO - 단계 재시도 중: 구글 접속 (시도 1/3)
+2025-03-19 10:49:40,537 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\15598d63-3ce3-40c4-afee-f90d5878cfc7_20250319_104940.json
+2025-03-19 10:49:40,538 - core.workflow_manager - INFO - 워크플로우 관리자 종료됨
+2025-03-19 10:49:40,605 - plugins.automation.playwright_plugin - INFO - goto 호출됨, 현재 페이지 ID: page_1742348978
+2025-03-19 10:49:40,606 - plugins.automation.playwright_plugin - INFO - 사용 가능한 페이지 ID 목록: []
+2025-03-19 10:49:40,606 - plugins.automation.playwright_plugin - INFO - 사용할 페이지 ID: page_1742348978
+2025-03-19 10:49:40,606 - plugins.automation.playwright_plugin - INFO - 페이지 ID page_1742348978를 찾을 수 없어 새 페이지를 생성합니다
+2025-03-19 10:49:40,706 - plugins.automation.playwright_plugin - INFO - Playwright 종료됨
+2025-03-19 10:49:40,706 - core.plugin_manager - INFO - 플러그인 종료됨: automation.playwright
+2025-03-19 10:49:40,707 - core.plugin_manager - INFO - 플러그인 종료됨: automation.pyautogui
+2025-03-19 10:49:40,707 - core.plugin_manager - INFO - 플러그인 종료됨: interruption.popup_handler
+2025-03-19 10:49:40,708 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.ocr
+2025-03-19 10:49:40,708 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.template_matching
+2025-03-19 10:49:40,709 - core.settings_manager - INFO - 설정 저장됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:49:40,709 - ui.main_window - INFO - 애플리케이션 종료됨
+2025-03-19 10:49:40,740 - __main__ - INFO - 모든 플러그인이 종료되었습니다.

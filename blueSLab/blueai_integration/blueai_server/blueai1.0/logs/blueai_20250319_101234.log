@@ -1,0 +1,41 @@
+2025-03-19 10:12:34,379 - __main__ - INFO - 로깅 시작 (레벨: INFO)
+2025-03-19 10:12:34,380 - __main__ - INFO - 로그 파일: C:\Users\USER\BlueAI\logs\blueai_20250319_101234.log
+2025-03-19 10:12:34,406 - __main__ - INFO - 시스템 초기화 중...
+2025-03-19 10:12:34,407 - __main__ - INFO - 설정 관리자 초기화 중...
+2025-03-19 10:12:34,408 - core.settings_manager - INFO - 설정 로드됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 10:12:34,409 - __main__ - INFO - 플러그인 관리자 초기화 중... (디렉토리: plugins)
+2025-03-19 10:12:34,409 - __main__ - INFO - 플러그인 로드 중...
+2025-03-19 10:12:34,415 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.automation.opencv_plugin
+2025-03-19 10:12:34,524 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PlaywrightPlugin from plugins.automation.playwright_plugin
+2025-03-19 10:12:34,821 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PyAutoGUIPlugin from plugins.automation.pyautogui_plugin
+2025-03-19 10:12:34,823 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.ad_blocker_plugin
+2025-03-19 10:12:34,824 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.cookie_handler_plugin
+2025-03-19 10:12:34,825 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PopupHandlerPlugin from plugins.interruption.popup_handler_plugin
+2025-03-19 10:12:35,220 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: OCRPlugin from plugins.recognition.ocr_plugin
+2025-03-19 10:12:35,222 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.recognition.selector_plugin
+2025-03-19 10:12:35,224 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: TemplateMatchingPlugin from plugins.recognition.template_matching_plugin
+2025-03-19 10:12:35,224 - core.plugin_manager - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:12:35,225 - __main__ - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 10:12:35,225 - __main__ - INFO - 플러그인 초기화 중...
+2025-03-19 10:12:35,843 - plugins.automation.playwright_plugin - INFO - Playwright 초기화됨
+2025-03-19 10:12:35,843 - core.plugin_manager - INFO - 플러그인 초기화 완료: playwright
+2025-03-19 10:12:35,844 - plugins.automation.pyautogui_plugin - INFO - 화면 크기: 1920x1080
+2025-03-19 10:12:35,844 - core.plugin_manager - INFO - 플러그인 초기화 완료: pyautogui
+2025-03-19 10:12:35,845 - plugins.interruption.popup_handler_plugin - INFO - 팝업 처리기 초기화 완료: 0 패턴 로드됨
+2025-03-19 10:12:35,845 - core.plugin_manager - INFO - 플러그인 초기화 완료: popup_handler
+2025-03-19 10:12:35,870 - plugins.recognition.ocr_plugin - INFO - Tesseract OCR 버전: 5.5.0.20241111
+2025-03-19 10:12:35,870 - core.plugin_manager - INFO - 플러그인 초기화 완료: ocr
+2025-03-19 10:12:35,872 - plugins.recognition.template_matching_plugin - INFO - OpenCV 버전: 4.10.0
+2025-03-19 10:12:35,872 - core.plugin_manager - INFO - 플러그인 초기화 완료: template_matching
+2025-03-19 10:12:35,872 - __main__ - INFO - 플러그인 초기화 성공: playwright
+2025-03-19 10:12:35,872 - __main__ - INFO - 플러그인 초기화 성공: pyautogui
+2025-03-19 10:12:35,873 - __main__ - INFO - 플러그인 초기화 성공: popup_handler
+2025-03-19 10:12:35,873 - __main__ - INFO - 플러그인 초기화 성공: ocr
+2025-03-19 10:12:35,873 - __main__ - INFO - 플러그인 초기화 성공: template_matching
+2025-03-19 10:12:35,873 - __main__ - INFO - 워크플로우 관리자 초기화 중...
+2025-03-19 10:12:35,875 - __main__ - INFO - 인터럽션 핸들러 초기화 중...
+2025-03-19 10:12:35,875 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 10:12:35,876 - __main__ - INFO - GUI 모드 시작
+2025-03-19 10:12:36,428 - ui.main_window - INFO - 메인 윈도우 초기화 완료
+2025-03-19 10:12:36,429 - thread_safe_ui - INFO - 스레드 안전성 패치가 적용되었습니다.
+2025-03-19 10:12:36,429 - nara_rpa - INFO - 나라장터 RPA 기능이 메인 윈도우에 통합되었습니다

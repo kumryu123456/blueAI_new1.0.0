@@ -1,0 +1,76 @@
+[
+  {
+    "command": "구글에서 파이썬 검색",
+    "result": {
+      "execution_time": 7.450018644332886,
+      "results": {
+        "find_search_box": {
+          "output": {
+            "confidence": 1.0,
+            "element": {
+              "selector": "input[type='search'], input[placeholder*='search' i], input[aria-label*='search' i], input[name='q'], textarea[name='q'], .gLFyf, .gsfi, [jsname='yZiJbe']",
+              "tag": "element",
+              "visible": true
+            },
+            "strategy_used": "selector"
+          },
+          "status": "completed"
+        },
+        "handle_interruptions": {
+          "output": {
+            "result": null
+          },
+          "status": "completed"
+        },
+        "input_search_term": {
+          "output": {
+            "method": "javascript_input",
+            "selector": "input[type='search'], input[placeholder*='search' i], input[aria-label*='search' i], input[name='q'], textarea[name='q'], .gLFyf, .gsfi, [jsname='yZiJbe']",
+            "text": "파이썬"
+          },
+          "status": "completed"
+        },
+        "navigate": {
+          "output": {
+            "current_url": "https://www.google.com/"
+          },
+          "status": "completed"
+        },
+        "submit_search": {
+          "output": {
+            "key": "Enter",
+            "method": "press",
+            "success": true
+          },
+          "status": "completed"
+        },
+        "wait_for_results": {
+          "output": {
+            "url": "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26sca_esv%3D570cf0d5ed487250%26source%3Dhp%26ei%3DoKXbZ9DsLqye0PEP6OHQ6QQ%26iflsig%3DACkRmUkAAAAAZ9uzsChy8ow0ITHSKbaLMz47wNCifotu%26ved%3D0ahUKEwjQvKHg9JeMAxUsDzQIHegwNE0Q4dUDCBA%26uact%3D5%26oq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26gs_lp%3DEgdnd3Mtd2l6IgntjIzsnbTsjawyCxAAGIAEGLEDGIMBMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMgsQABiABBixAxiDATIFEAAYgAQyBRAAGIAESNUFUI8EWI8EcAF4AJABAJgBcKABcKoBAzAuMbgBA8gBAPgBAZgCAaACd6gCAJgDA_EFivPlgQAE68WSBwMwLjGgB5wFsgcDMC4xuAd3%26sclient%3Dgws-wiz%26sei%3Do6XbZ47kKumovr0P2sGEIA&q=EgQ7ChtoGKPL7r4GIjDmv2xwVjNKm75v3bqklfXw8427F18cdSwlyGN9aun0f49RTuetteTcCjuUvmcoc4wyAnJSWgFD"
+          },
+          "status": "completed"
+        }
+      },
+      "state": {
+        "confidence": 1.0,
+        "current_url": "https://www.google.com/",
+        "element": {
+          "selector": "input[type='search'], input[placeholder*='search' i], input[aria-label*='search' i], input[name='q'], textarea[name='q'], .gLFyf, .gsfi, [jsname='yZiJbe']",
+          "tag": "element",
+          "visible": true
+        },
+        "key": "Enter",
+        "method": "press",
+        "selector": "input[type='search'], input[placeholder*='search' i], input[aria-label*='search' i], input[name='q'], textarea[name='q'], .gLFyf, .gsfi, [jsname='yZiJbe']",
+        "strategy_used": "selector",
+        "success": true,
+        "text": "파이썬",
+        "url": "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26sca_esv%3D570cf0d5ed487250%26source%3Dhp%26ei%3DoKXbZ9DsLqye0PEP6OHQ6QQ%26iflsig%3DACkRmUkAAAAAZ9uzsChy8ow0ITHSKbaLMz47wNCifotu%26ved%3D0ahUKEwjQvKHg9JeMAxUsDzQIHegwNE0Q4dUDCBA%26uact%3D5%26oq%3D%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC%26gs_lp%3DEgdnd3Mtd2l6IgntjIzsnbTsjawyCxAAGIAEGLEDGIMBMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMgsQABiABBixAxiDATIFEAAYgAQyBRAAGIAESNUFUI8EWI8EcAF4AJABAJgBcKABcKoBAzAuMbgBA8gBAPgBAZgCAaACd6gCAJgDA_EFivPlgQAE68WSBwMwLjGgB5wFsgcDMC4xuAd3%26sclient%3Dgws-wiz%26sei%3Do6XbZ47kKumovr0P2sGEIA&q=EgQ7ChtoGKPL7r4GIjDmv2xwVjNKm75v3bqklfXw8427F18cdSwlyGN9aun0f49RTuetteTcCjuUvmcoc4wyAnJSWgFD"
+      },
+      "status": "completed",
+      "workflow_id": "simple_workflow"
+    },
+    "timestamp": "2025-03-20 14:20:37",
+    "type": "command"
+  }
+]

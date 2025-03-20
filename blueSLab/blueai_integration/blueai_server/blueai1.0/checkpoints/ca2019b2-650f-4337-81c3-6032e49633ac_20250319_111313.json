@@ -1,0 +1,203 @@
+{
+  "workflow_id": "ca2019b2-650f-4337-81c3-6032e49633ac",
+  "name": "명령어 워크플로우: 구글에서 사과 검색",
+  "description": "명령어로 생성된 워크플로우: 구글에서 사과 검색",
+  "steps": {
+    "start_browser": {
+      "step_id": "start_browser",
+      "name": "브라우저 시작",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "launch_browser",
+        "params": {
+          "headless": false,
+          "browser_type": "chromium"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [],
+      "condition": null,
+      "rollback_action": null,
+      "status": "running",
+      "result": null,
+      "error": null,
+      "start_time": "2025-03-19T11:13:08.098749",
+      "end_time": null,
+      "retry_attempts": 3
+    },
+    "create_page": {
+      "step_id": "create_page",
+      "name": "페이지 생성",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "new_page",
+        "params": {}
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "start_browser"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "goto_google": {
+      "step_id": "goto_google",
+      "name": "구글 접속",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "goto",
+        "params": {
+          "url": "https://www.google.com"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "create_page"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "input_search": {
+      "step_id": "input_search",
+      "name": "검색어 입력",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "fill",
+        "params": {
+          "selector": "input[name=\"q\"]",
+          "value": "구글에서 사과 검색"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "goto_google"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "click_search": {
+      "step_id": "click_search",
+      "name": "검색 버튼 클릭",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "press_key",
+        "params": {
+          "selector": "input[name=\"q\"]",
+          "key": "Enter"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "input_search"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "handle_interruptions": {
+      "step_id": "handle_interruptions",
+      "name": "인터럽션 처리",
+      "action": {
+        "plugin_type": "interruption",
+        "plugin_name": "popup_handler",
+        "action": "handle_all_interruptions",
+        "params": {}
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "click_search"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    },
+    "take_screenshot": {
+      "step_id": "take_screenshot",
+      "name": "스크린샷 캡처",
+      "action": {
+        "plugin_type": "automation",
+        "plugin_name": "playwright",
+        "action": "screenshot",
+        "params": {
+          "path": "C:\\Users\\USER\\BlueAI\\screenshots\\search_20250319_111302.png"
+        }
+      },
+      "retry_count": 3,
+      "retry_delay": 2.0,
+      "timeout": 60.0,
+      "dependencies": [
+        "handle_interruptions"
+      ],
+      "condition": null,
+      "rollback_action": null,
+      "status": "pending",
+      "result": null,
+      "error": null,
+      "start_time": null,
+      "end_time": null,
+      "retry_attempts": 0
+    }
+  },
+  "step_order": [
+    "start_browser",
+    "create_page",
+    "goto_google",
+    "input_search",
+    "click_search",
+    "handle_interruptions",
+    "take_screenshot"
+  ],
+  "status": "canceled",
+  "checkpoint_dir": "C:\\Users\\USER\\BlueAI\\checkpoints",
+  "auto_recovery": true,
+  "variables": {},
+  "start_time": "2025-03-19T11:13:02.052234",
+  "end_time": "2025-03-19T11:13:13.273221",
+  "current_step_id": "start_browser",
+  "error": null
+}

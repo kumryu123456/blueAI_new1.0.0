@@ -1,0 +1,32 @@
+{
+  "system": {
+    "headless_mode": false,
+    "log_level": "INFO",
+    "checkpoint_dir": "",
+    "max_retries": 3,
+    "auto_recovery": true
+  },
+  "plugins": {},
+  "automation": {
+    "default_timeout": 60.0,
+    "default_retry_delay": 2.0,
+    "screenshot_on_error": true,
+    "browser_type": "chromium"
+  },
+  "interruption": {
+    "enabled": true,
+    "popup_handling": true,
+    "ad_blocking": true,
+    "cookie_handling": true,
+    "max_interruptions": 10,
+    "whitelist": [],
+    "blacklist": []
+  },
+  "ui": {
+    "theme": "light",
+    "language": "ko",
+    "font_size": 12,
+    "show_detailed_logs": true
+  },
+  "favorites": []
+}

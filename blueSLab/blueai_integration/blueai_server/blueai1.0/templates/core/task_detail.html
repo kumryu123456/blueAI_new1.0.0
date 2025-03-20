@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ task.title }} - BlueAI{% endblock %}
+
+{% block content %}
+<div id="chatPage" class="chat-page">
+    <!-- 대화창 -->
+    <div id="chatWindow" data-task-id="{{ task.id }}">
+        <!-- 메시지는 JavaScript에서 동적으로 추가됨 -->
+    </div>
+
+    <!-- 입력 컨테이너 - Claude 3.7 스타일로 수정 -->
+    <div id="inputContainer">
+        <div class="input-flex-container">
+            <!-- 서브페이지 모델 선택 영역 추가 -->
+            <div class="chat-model-options">
+                <div class="model-selector">
+                    <button class="model-button">
+                        <span class="model-name">Quantum 1.0 Feynman</span>
+                        <i class="fas fa-check model-check"></i>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="thinking-mode">사고모드</div>
+                    <div class="model-dropdown">
+                        <div class="model-option selected">
+                            <div class="model-option-name">Quantum 1.0 Feynman</div>
+                            <i class="fas fa-check model-check"></i>
+                        </div>
+                        <div class="model-option">
+                            <div class="model-option-name">Quantum 1.0 Basic</div>
+                        </div>
+                        <div class="model-option">
+                            <div class="model-option-name">Quantum 1.0 Expert</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-selector">
+                    <button class="style-button">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>일반</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="style-dropdown">
+                        <div class="style-option selected">
+                            <div>
+                                <div class="style-option-name">일반</div>
+                                <div class="style-option-desc">Quantum의 기본 응답</div>
+                            </div>
+                            <i class="fas fa-check style-check"></i>
+                        </div>
+                        <div class="style-option">
+                            <div>
+                                <div class="style-option-name">간결한</div>
+                                <div class="style-option-desc">짧은 응답과 더 많은 메시지</div>
+                            </div>
+                        </div>
+                        <div class="style-option">
+                            <div>
+                                <div class="style-option-name">설명적인</div>
+                                <div class="style-option-desc">사용자 관점의 세부적인 응답</div>
+                            </div>
+                        </div>
+                        <div class="style-option">
+                            <div>
+                                <div class="style-option-name">격식있는</div>
+                                <div class="style-option-desc">명확하고 체계적인 응답</div>
+                            </div>
+                        </div>
+                        <div class="style-create">
+                            <i class="fas fa-plus"></i>
+                            스타일 생성 및 편집
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 입력 영역 -->
+            <textarea id="userInput" placeholder="오늘은 어떤 것을 대신해드릴까요?" rows="1"></textarea>
+            
+            <!-- 서브페이지 입력창 도구 영역 -->
+            <div class="chat-input-tools">
+                <button id="fileUploadBtn" class="tool-button tooltip-container">
+                    <i class="fas fa-paperclip"></i>
+                    <span class="tooltip">파일 업로드</span>
+                </button>
+                <div class="tool-separator"></div>
+                <button class="tool-button tooltip-container">
+                    <i class="fas fa-camera"></i>
+                    <span class="tooltip">스크린샷 캡처</span>
+                </button>
+                <div class="tool-separator"></div>
+                <button class="tool-button tooltip-container">
+                    <i class="fab fa-github"></i>
+                    <span class="tooltip">GitHub</span>
+                </button>
+                <div class="tool-separator"></div>
+                <button class="tool-button tooltip-container">
+                    <i class="fab fa-google-drive"></i>
+                    <span class="tooltip">Google Drive</span>
+                </button>
+                <input type="file" id="fileUpload" hidden multiple>
+            </div>
+            
+            <!-- 전송 버튼 -->
+            <button id="enterBtn" class="send-button">
+                <i class="fas fa-microphone mic-icon"></i>
+                <i class="fas fa-paper-plane send-icon" style="display: none;"></i>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 초기화 시 제목 표시
+        document.getElementById('taskTitle').textContent = "{{ task.title }}";
+        document.getElementById('taskTitle').style.display = 'block';
+        
+        // 유틸리티 버튼 표시
+        document.getElementById('shareBtn').style.display = 'block';
+        document.getElementById('favoriteBtn').style.display = 'block';
+        document.getElementById('logDiaryBtn').style.display = 'block';
+        
+        const taskId = document.getElementById('chatWindow').dataset.taskId;
+        
+        // 작업 데이터 로드
+        fetch(apiUrls.getTask(taskId))
+            .then(response => response.json())
+            .then(task => {
+                // 대화 기록 로드
+                loadConversation(task.conversation);
+                
+                // 즐겨찾기 상태 설정
+                updateFavoriteButton(task.is_favorite);
+            })
+            .catch(error => {
+                console.error('Error loading task:', error);
+            });
+            
+        // 메시지 추가 함수
+        function addMessage(type, content, scroll = true) {
+            const chatWindow = document.getElementById('chatWindow');
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            
+            const p = document.createElement('p');
+            p.innerHTML = content;
+            
+            messageDiv.appendChild(p);
+            chatWindow.appendChild(messageDiv);
+            
+            if (scroll) {
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+        }
+        
+        // 대화 기록 로드 함수
+        function loadConversation(conversation) {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.innerHTML = '';
+            
+            if (conversation) {
+                conversation.forEach(message => {
+                    addMessage(message.type, message.content, false);
+                });
+            }
+            
+            // 스크롤을 최하단으로
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+        
+        // 즐겨찾기 버튼 상태 업데이트
+        function updateFavoriteButton(isFavorite) {
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            if (isFavorite) {
+                favoriteBtn.innerHTML = '<i class="fas fa-star"></i><span class="tooltip">즐겨찾기 해제</span>';
+            } else {
+                favoriteBtn.innerHTML = '<i class="far fa-star"></i><span class="tooltip">즐겨찾기</span>';
+            }
+        }
+    });
+</script>
+{% endblock %}

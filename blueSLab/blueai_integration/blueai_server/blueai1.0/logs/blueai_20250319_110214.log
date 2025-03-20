@@ -1,0 +1,197 @@
+2025-03-19 11:02:14,316 - __main__ - INFO - 로깅 시작 (레벨: INFO)
+2025-03-19 11:02:14,316 - __main__ - INFO - 로그 파일: C:\Users\USER\BlueAI\logs\blueai_20250319_110214.log
+2025-03-19 11:02:14,334 - __main__ - INFO - 시스템 초기화 중...
+2025-03-19 11:02:14,335 - __main__ - INFO - 설정 관리자 초기화 중...
+2025-03-19 11:02:14,337 - core.settings_manager - INFO - 설정 로드됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 11:02:14,337 - __main__ - INFO - 플러그인 관리자 초기화 중... (디렉토리: plugins)
+2025-03-19 11:02:14,338 - __main__ - INFO - 플러그인 로드 중...
+2025-03-19 11:02:14,343 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.automation.opencv_plugin
+2025-03-19 11:02:14,462 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PlaywrightPlugin from plugins.automation.playwright_plugin
+2025-03-19 11:02:14,767 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PyAutoGUIPlugin from plugins.automation.pyautogui_plugin
+2025-03-19 11:02:14,770 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.ad_blocker_plugin
+2025-03-19 11:02:14,771 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.interruption.cookie_handler_plugin
+2025-03-19 11:02:14,773 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: PopupHandlerPlugin from plugins.interruption.popup_handler_plugin
+2025-03-19 11:02:15,153 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: OCRPlugin from plugins.recognition.ocr_plugin
+2025-03-19 11:02:15,154 - core.plugin_manager - WARNING - 플러그인 클래스를 찾을 수 없음: plugins.recognition.selector_plugin
+2025-03-19 11:02:15,157 - core.plugin_manager - INFO - 플러그인 클래스 로드됨: TemplateMatchingPlugin from plugins.recognition.template_matching_plugin
+2025-03-19 11:02:15,157 - core.plugin_manager - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 11:02:15,157 - __main__ - INFO - 로드된 플러그인: ['playwright', 'pyautogui', 'popup_handler', 'ocr', 'template_matching']
+2025-03-19 11:02:15,157 - __main__ - INFO - 플러그인 초기화 중...
+2025-03-19 11:02:15,788 - plugins.automation.playwright_plugin - INFO - Playwright 초기화됨
+2025-03-19 11:02:15,788 - core.plugin_manager - INFO - 플러그인 초기화 완료: playwright
+2025-03-19 11:02:15,789 - plugins.automation.pyautogui_plugin - INFO - 화면 크기: 1920x1080
+2025-03-19 11:02:15,789 - core.plugin_manager - INFO - 플러그인 초기화 완료: pyautogui
+2025-03-19 11:02:15,790 - plugins.interruption.popup_handler_plugin - INFO - 팝업 처리기 초기화 완료: 0 패턴 로드됨
+2025-03-19 11:02:15,791 - core.plugin_manager - INFO - 플러그인 초기화 완료: popup_handler
+2025-03-19 11:02:15,813 - plugins.recognition.ocr_plugin - INFO - Tesseract OCR 버전: 5.5.0.20241111
+2025-03-19 11:02:15,814 - core.plugin_manager - INFO - 플러그인 초기화 완료: ocr
+2025-03-19 11:02:15,815 - plugins.recognition.template_matching_plugin - INFO - OpenCV 버전: 4.10.0
+2025-03-19 11:02:15,815 - core.plugin_manager - INFO - 플러그인 초기화 완료: template_matching
+2025-03-19 11:02:15,815 - __main__ - INFO - 플러그인 초기화 성공: playwright
+2025-03-19 11:02:15,816 - __main__ - INFO - 플러그인 초기화 성공: pyautogui
+2025-03-19 11:02:15,816 - __main__ - INFO - 플러그인 초기화 성공: popup_handler
+2025-03-19 11:02:15,816 - __main__ - INFO - 플러그인 초기화 성공: ocr
+2025-03-19 11:02:15,816 - __main__ - INFO - 플러그인 초기화 성공: template_matching
+2025-03-19 11:02:15,816 - __main__ - INFO - 워크플로우 관리자 초기화 중...
+2025-03-19 11:02:15,817 - __main__ - INFO - 인터럽션 핸들러 초기화 중...
+2025-03-19 11:02:15,818 - core.interruption_handler - INFO - 규칙 파일이 존재하지 않음: C:\Users\USER\BlueAI\config\interruption_rules.json
+2025-03-19 11:02:15,818 - __main__ - INFO - GUI 모드 시작
+2025-03-19 11:02:16,413 - ui.main_window - INFO - 메인 윈도우 초기화 완료
+2025-03-19 11:02:24,201 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\5273e21e-52f7-4523-b517-dc5755ad8c6c_20250319_110224.json
+2025-03-19 11:02:24,428 - plugins.automation.playwright_plugin - INFO - 브라우저 시작됨: chromium (headless: False)
+2025-03-19 11:02:24,431 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\5273e21e-52f7-4523-b517-dc5755ad8c6c_20250319_110224.json
+2025-03-19 11:02:24,442 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 생성 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) current active started main>
+	Expected: <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+2025-03-19 11:02:24,442 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:24,442 - plugins.automation.playwright_plugin - ERROR - 새 페이지 생성 중 오류: 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:24,451 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 503, in new_page
+    raise ValueError(error_msg)
+ValueError: 컨텍스트 None를 찾을 수 없습니다
+
+2025-03-19 11:02:24,451 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:24,452 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:24,453 - core.workflow_manager - INFO - 단계 재시도 중: 페이지 생성 (시도 1/3)
+2025-03-19 11:02:26,455 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 생성 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) current active started main>
+	Expected: <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+2025-03-19 11:02:26,457 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:26,457 - plugins.automation.playwright_plugin - ERROR - 새 페이지 생성 중 오류: 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:26,458 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 503, in new_page
+    raise ValueError(error_msg)
+ValueError: 컨텍스트 None를 찾을 수 없습니다
+
+2025-03-19 11:02:26,459 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:26,459 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:26,459 - core.workflow_manager - INFO - 단계 재시도 중: 페이지 생성 (시도 2/3)
+2025-03-19 11:02:28,462 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 생성 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) current active started main>
+	Expected: <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+2025-03-19 11:02:28,463 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:28,463 - plugins.automation.playwright_plugin - ERROR - 새 페이지 생성 중 오류: 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:28,463 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 503, in new_page
+    raise ValueError(error_msg)
+ValueError: 컨텍스트 None를 찾을 수 없습니다
+
+2025-03-19 11:02:28,464 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:28,464 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:28,464 - core.workflow_manager - INFO - 단계 재시도 중: 페이지 생성 (시도 3/3)
+2025-03-19 11:02:30,467 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 생성 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) current active started main>
+	Expected: <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+2025-03-19 11:02:30,469 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,469 - plugins.automation.playwright_plugin - ERROR - 새 페이지 생성 중 오류: 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,469 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 503, in new_page
+    raise ValueError(error_msg)
+ValueError: 컨텍스트 None를 찾을 수 없습니다
+
+2025-03-19 11:02:30,470 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,470 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,472 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\5273e21e-52f7-4523-b517-dc5755ad8c6c_20250319_110230.json
+2025-03-19 11:02:30,475 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 생성 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) current active started main>
+	Expected: <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+2025-03-19 11:02:30,476 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,476 - plugins.automation.playwright_plugin - ERROR - 새 페이지 생성 중 오류: 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,477 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 503, in new_page
+    raise ValueError(error_msg)
+ValueError: 컨텍스트 None를 찾을 수 없습니다
+
+2025-03-19 11:02:30,477 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,478 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:30,478 - core.workflow_manager - INFO - 단계 재시도 중: 페이지 생성 (시도 1/3)
+2025-03-19 11:02:32,480 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 생성 중 오류: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) current active started main>
+	Expected: <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+2025-03-19 11:02:32,481 - plugins.automation.playwright_plugin - ERROR - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:32,482 - plugins.automation.playwright_plugin - ERROR - 새 페이지 생성 중 오류: 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:32,482 - plugins.automation.playwright_plugin - ERROR - Traceback (most recent call last):
+  File "C:\Users\USER\blueai_client_ver2\plugins\automation\playwright_plugin.py", line 503, in new_page
+    raise ValueError(error_msg)
+ValueError: 컨텍스트 None를 찾을 수 없습니다
+
+2025-03-19 11:02:32,482 - plugins.automation.playwright_plugin - ERROR - 액션 실행 중 오류: new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:32,482 - core.plugin_manager - ERROR - 플러그인 실행 중 오류: automation.playwright.new_page - 컨텍스트 None를 찾을 수 없습니다
+2025-03-19 11:02:32,483 - core.workflow_manager - INFO - 단계 재시도 중: 페이지 생성 (시도 2/3)
+2025-03-19 11:02:33,296 - core.workflow_manager - INFO - 체크포인트 저장됨: C:\Users\USER\BlueAI\checkpoints\5273e21e-52f7-4523-b517-dc5755ad8c6c_20250319_110233.json
+2025-03-19 11:02:33,296 - core.workflow_manager - INFO - 워크플로우 관리자 종료됨
+2025-03-19 11:02:33,315 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+	Expected: <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) suspended active started main>
+2025-03-19 11:02:33,334 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+	Expected: <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) suspended active started main>
+2025-03-19 11:02:33,338 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+	Expected: <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) suspended active started main>
+2025-03-19 11:02:33,341 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+	Expected: <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) suspended active started main>
+2025-03-19 11:02:33,344 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+	Expected: <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) suspended active started main>
+2025-03-19 11:02:33,347 - asyncio - ERROR - Exception in callback SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>(<Task finishe...1.0.6778.33>>>) at C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ^^^^^^^^^^^^^^^
+greenlet.error: Cannot switch to a different thread
+	Current:  <greenlet.greenlet object at 0x000001179C886CC0 (otid=0x000001179CA8BC00) suspended active started main>
+	Expected: <greenlet.greenlet object at 0x000001179DD49580 (otid=0x000001179CE4BAB0) suspended active started main>
+2025-03-19 11:02:33,522 - plugins.automation.playwright_plugin - INFO - Playwright 종료됨
+2025-03-19 11:02:33,523 - core.plugin_manager - INFO - 플러그인 종료됨: automation.playwright
+2025-03-19 11:02:33,523 - core.plugin_manager - INFO - 플러그인 종료됨: automation.pyautogui
+2025-03-19 11:02:33,524 - core.plugin_manager - INFO - 플러그인 종료됨: interruption.popup_handler
+2025-03-19 11:02:33,524 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.ocr
+2025-03-19 11:02:33,524 - core.plugin_manager - INFO - 플러그인 종료됨: recognition.template_matching
+2025-03-19 11:02:33,524 - core.settings_manager - INFO - 설정 저장됨: C:\Users\USER\BlueAI\config\settings.json
+2025-03-19 11:02:33,525 - ui.main_window - INFO - 애플리케이션 종료됨
+2025-03-19 11:02:33,556 - __main__ - INFO - 모든 플러그인이 종료되었습니다.
