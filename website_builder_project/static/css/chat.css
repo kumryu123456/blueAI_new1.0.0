@@ -1,0 +1,220 @@
+/* static/css/chat.css 파일을 생성하세요 */
+
+/* 메시지 스타일 */
+.message {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    max-width: 85%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    word-break: break-word;
+}
+
+.message:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.user {
+    background-color: #4361ee;
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.message.assistant {
+    background-color: #f5f5f5;
+    color: #333;
+    border-bottom-left-radius: 0.25rem;
+    align-self: flex-start;
+    border-left: 3px solid #4361ee;
+}
+
+/* 메시지 내 마크다운 스타일 */
+.message.assistant p {
+    margin-bottom: 0.5rem;
+}
+
+.message.assistant p:last-child {
+    margin-bottom: 0;
+}
+
+.message.assistant a {
+    color: #4361ee;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.message.assistant a:hover {
+    text-decoration: underline;
+}
+
+.message.assistant pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.message.assistant code {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+}
+
+.message.assistant code:not(pre code) {
+    color: #e83e8c;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 0.1rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.message.assistant ul,
+.message.assistant ol {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.message.assistant blockquote {
+    border-left: 3px solid #ccc;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    color: #666;
+}
+
+/* 로딩 애니메이션 */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: #777;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    opacity: 0.4;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typing {
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.4; transform: scale(1); }
+}
+
+.loading-message {
+    padding: 10px 15px;
+}
+
+/* 채팅 입력 스타일 */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #eaeaea;
+    padding: 0.75rem;
+    background-color: white;
+}
+
+.chat-input textarea {
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    resize: none;
+    min-height: 38px;
+    max-height: 120px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    flex-grow: 1;
+    margin-right: 0.5rem;
+}
+
+.chat-input textarea:focus {
+    outline: none;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.25);
+}
+
+/* 토스트 메시지 스타일 */
+.toast-container {
+    z-index: 1100;
+}
+
+.toast {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    max-width: 350px;
+}
+
+.toast .toast-header {
+    border-bottom: none;
+}
+
+.toast.bg-success .toast-header {
+    background-color: #28a745;
+    color: white;
+}
+
+.toast.bg-danger .toast-header {
+    background-color: #dc3545;
+    color: white;
+}
+
+.toast.bg-info .toast-header {
+    background-color: #17a2b8;
+    color: white;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .message {
+        max-width: 90%;
+    }
+    
+    .chat-container {
+        height: 400px;
+    }
+    
+    .preview-container {
+        height: 400px;
+    }
+}
+
+/* 미리보기 스타일 */
+.preview-container {
+    transition: width 0.3s ease;
+    margin: 0 auto;
+}
+
+/* 코드 뷰어 스타일 */
+.tab-pane pre {
+    margin: 0;
+    border-radius: 0;
+    background-color: #f8f9fa;
+}
+
+/* 선택 상자 스타일 */
+.device-select {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}

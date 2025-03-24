@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ website.name }} 편집 - 웹사이트 빌더{% endblock %}
+
+{% block extra_css %}
+<style>
+    .chat-container {
+        height: calc(100vh - 180px);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+    }
+    
+    .message {
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        max-width: 85%;
+        word-break: break-word;
+    }
+    
+    .message.user {
+        background-color: #007bff;
+        color: white;
+        align-self: flex-end;
+        margin-left: auto;
+    }
+    
+    .message.assistant {
+        background-color: #e9ecef;
+        color: #212529;
+        align-self: flex-start;
+    }
+    
+    .message.assistant a {
+        color: #007bff;
+    }
+    
+    .message.assistant pre {
+        background-color: #f1f3f5;
+        padding: 0.75rem;
+        border-radius: 0.25rem;
+        overflow-x: auto;
+    }
+    
+    .message.assistant code {
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.875em;
+    }
+    
+    .chat-input {
+        margin-top: 1rem;
+        display: flex;
+    }
+    
+    .chat-input textarea {
+        flex-grow: 1;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        resize: none;
+        min-height: 38px;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    
+    .chat-input button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    .preview-container {
+        height: calc(100vh - 180px);
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+    
+    .preview-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .editor-toolbar {
+        background-color: #f8f9fa;
+        padding: 0.5rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    /* 로딩 애니메이션 */
+    .typing-indicator {
+        display: flex;
+        align-items: center;
+    }
+    
+    .typing-indicator span {
+        height: 8px;
+        width: 8px;
+        background-color: #777;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 2px;
+        opacity: 0.4;
+        animation: typing 1s infinite;
+    }
+    
+    .typing-indicator span:nth-child(1) {
+        animation-delay: 0s;
+    }
+    
+    .typing-indicator span:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+    
+    .typing-indicator span:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+    
+    @keyframes typing {
+        0% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+        100% { opacity: 0.4; transform: scale(1); }
+    }
+    
+    .loading-message {
+        padding: 10px 15px;
+    }
+    
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+        .chat-container, .preview-container {
+            height: 50vh;
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col">
+        <h1>{{ website.name }} <small class="text-muted fs-6">편집중</small></h1>
+    </div>
+    <div class="col-auto">
+        <div class="btn-group" role="group">
+            <a href="{% url 'preview_website' website.id %}" class="btn btn-outline-primary" target="_blank">
+                <i class="bi bi-box-arrow-up-right"></i> 새 창에서 미리보기
+            </a>
+            <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> 대시보드
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- 왼쪽 채팅 인터페이스 -->
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">AI 어시스턴트와 대화</h5>
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="clearChat">
+                    <i class="bi bi-trash"></i> 대화 초기화
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        {% for message in conversation.messages.all %}
+                            <div class="message {{ message.role }}">
+                                {{ message.content|linebreaks }}
+                            </div>
+                        {% empty %}
+                            <div class="message assistant">
+                                안녕하세요! {{ website.name }} 웹사이트를 만드는 것을 도와드리겠습니다. 
+                                어떤 기능이나 디자인을 원하시나요?
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <form class="chat-input" id="chatForm">
+                        {% csrf_token %}
+                        <input type="hidden" id="websiteId" value="{{ website.id }}">
+                        <textarea class="form-control" id="messageInput" placeholder="메시지를 입력하세요..." rows="1" required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="card-footer bg-white text-muted">
+                <small>Shift+Enter: 줄바꿈, Enter: 메시지 전송</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 오른쪽 미리보기 -->
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <ul class="nav nav-tabs card-header-tabs" id="previewTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview-pane" type="button" role="tab" aria-controls="preview-pane" aria-selected="true">
+                            <i class="bi bi-eye"></i> 미리보기
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="code-tab" data-bs-toggle="tab" data-bs-target="#code-pane" type="button" role="tab" aria-controls="code-pane" aria-selected="false">
+                            <i class="bi bi-code-slash"></i> 코드
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body p-0">
+                <div class="tab-content" id="previewTabContent">
+                    <!-- 미리보기 탭 -->
+                    <div class="tab-pane fade show active" id="preview-pane" role="tabpanel" aria-labelledby="preview-tab">
+                        <div class="editor-toolbar d-flex justify-content-between">
+                            <div>
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" id="refreshPreview">
+                                        <i class="bi bi-arrow-clockwise"></i> 새로고침
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        <i class="bi bi-phone"></i> 화면 크기
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><button class="dropdown-item preview-size" data-width="100%" data-device="데스크톱">데스크톱</button></li>
+                                        <li><button class="dropdown-item preview-size" data-width="768px" data-device="태블릿">태블릿</button></li>
+                                        <li><button class="dropdown-item preview-size" data-width="375px" data-device="모바일">모바일</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-success" id="saveWebsite">
+                                    <i class="bi bi-save"></i> 저장하기
+                                </button>
+                            </div>
+                        </div>
+                        <div class="preview-container" id="previewContainer">
+                            <iframe id="previewFrame" src="{% url 'preview_website' website.id %}"></iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- 코드 탭 -->
+                    <div class="tab-pane fade" id="code-pane" role="tabpanel" aria-labelledby="code-tab">
+                        <div class="editor-toolbar">
+                            <ul class="nav nav-pills" id="codeNavs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="html-tab" data-bs-toggle="pill" data-bs-target="#html-code" type="button" role="tab" aria-controls="html-code" aria-selected="true">HTML</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="css-tab" data-bs-toggle="pill" data-bs-target="#css-code" type="button" role="tab" aria-controls="css-code" aria-selected="false">CSS</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="js-tab" data-bs-toggle="pill" data-bs-target="#js-code" type="button" role="tab" aria-controls="js-code" aria-selected="false">JavaScript</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="codeNavContent">
+                            <div class="tab-pane fade show active" id="html-code" role="tabpanel" aria-labelledby="html-tab">
+                                <pre class="m-0 p-3" style="max-height: calc(100vh - 280px); overflow-y: auto;"><code class="html">{{ website.html_code }}</code></pre>
+                            </div>
+                            <div class="tab-pane fade" id="css-code" role="tabpanel" aria-labelledby="css-tab">
+                                <pre class="m-0 p-3" style="max-height: calc(100vh - 280px); overflow-y: auto;"><code class="css">{{ website.css_code }}</code></pre>
+                            </div>
+                            <div class="tab-pane fade" id="js-code" role="tabpanel" aria-labelledby="js-tab">
+                                <pre class="m-0 p-3" style="max-height: calc(100vh - 280px); overflow-y: auto;"><code class="javascript">{{ website.js_code }}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- 마크다운 렌더링 라이브러리 -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- 코드 하이라이팅 라이브러리 -->
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/lib/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.4.0/styles/github.min.css">
+<!-- 채팅 인터페이스 JS -->
+<script src="{% static 'js/chat.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 코드 하이라이팅 초기화
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
+        
+        // 미리보기 크기 조절
+        document.querySelectorAll('.preview-size').forEach(button => {
+            button.addEventListener('click', function() {
+                const width = this.dataset.width;
+                const device = this.dataset.device;
+                const previewContainer = document.getElementById('previewContainer');
+                const previewFrame = document.getElementById('previewFrame');
+                
+                // 미리보기 컨테이너 스타일 변경
+                previewContainer.style.width = width;
+                previewContainer.style.margin = width === '100%' ? '0' : '0 auto';
+                
+                // 드롭다운 버튼 텍스트 업데이트
+                const dropdownButton = document.querySelector('[data-bs-toggle="dropdown"]');
+                dropdownButton.innerHTML = `<i class="bi bi-phone"></i> ${device}`;
+                
+                // 미리보기 새로고침
+                previewFrame.src = previewFrame.src;
+            });
+        });
+        
+        // 대화 초기화 버튼
+        document.getElementById('clearChat').addEventListener('click', function() {
+            if (confirm('정말 대화 내역을 초기화하시겠습니까? 대화 내역이 모두 삭제됩니다.')) {
+                // CSRF 토큰 가져오기
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                const websiteId = document.getElementById('websiteId').value;
+                
+                fetch(`/website/${websiteId}/clear-conversation/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // 대화창 비우기
+                        const chatMessages = document.getElementById('chatMessages');
+                        chatMessages.innerHTML = `
+                            <div class="message assistant">
+                                안녕하세요! 웹사이트를 만드는 것을 도와드리겠습니다. 
+                                어떤 기능이나 디자인을 원하시나요?
+                            </div>
+                        `;
+                    } else {
+                        alert('대화 초기화 중 오류가 발생했습니다.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('대화 초기화 중 오류가 발생했습니다.');
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

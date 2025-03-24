@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}대시보드 - 웹사이트 빌더{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1>내 웹사이트</h1>
+    </div>
+    <div class="col-auto">
+        <a href="{% url 'create_website' %}" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> 새 웹사이트 만들기
+        </a>
+    </div>
+</div>
+
+{% if websites %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for website in websites %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ website.name }}</h5>
+                        <p class="card-text">{{ website.purpose|truncatechars:100 }}</p>
+                        <p class="text-muted">
+                            <small>생성일: {{ website.created_at|date:"Y-m-d" }}</small><br>
+                            <small>마지막 수정: {{ website.updated_at|date:"Y-m-d H:i" }}</small>
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="{% url 'edit_website' website.id %}" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-pencil"></i> 편집하기
+                        </a>
+                        <a href="{% url 'preview_website' website.id %}" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-eye"></i> 미리보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        아직 웹사이트가 없습니다. '새 웹사이트 만들기'를 클릭하여 첫 웹사이트를 만들어보세요!
+    </div>
+{% endif %}
+{% endblock %}
